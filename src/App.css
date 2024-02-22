@@ -1,0 +1,843 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Great+Vibes&display=swap');
+
+
+*{
+  padding: 0px;
+  margin: 0px;
+  /* background-color: #041e55; */
+  font-size: 16px;
+  color: #caf0f8;
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+  
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+
+
+
+
+/* ###################################################################################################################
+
+                             ******       Header Component        ******
+
+################################################################################################################## */
+
+.navBar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+  
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  padding: 10px 5px;
+  /* border: 1px solid red; */
+
+}
+.navList{
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  background: none;
+}
+.navList > li{
+  list-style: none;
+  padding: 0px 20px;
+  background: none;
+  /* font-size: 2em; */
+}
+
+.navBtn {
+  position: relative;
+  /* padding: 10px 0px; */
+  margin-right: 20px;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  background-color: #041e55;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.navBtn, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.navBtn .button__text {
+  transform: translateX(22px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.navBtn .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 30px;
+  background-color: #041e55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBtn .svg {
+  width: 20px;
+  fill: #fff;
+}
+
+.navBtn:hover {
+  background: #041e55;
+}
+
+.navBtn:hover .button__text {
+  color: transparent;
+}
+
+.navBtn:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.butnavBtnton:active .button__icon {
+  background-color: #041e55;
+  /* color: white; */
+}
+
+.navBtn:active {
+  border: 1px solid #041e55;
+}
+.nav-list li a.active {
+  position: relative;
+  color: #041e55; 
+}
+
+
+
+
+
+
+
+.nav-list li a.active::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white; 
+}
+
+
+.nav-list li a {
+  display: block;
+  color: #041e55;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s; 
+}
+
+.nav-list li a:hover {
+  color: white;
+}
+
+.logo {
+  font-weight: bold;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-list li {
+  margin: 10px 20px;
+  position: relative;
+}
+
+.nav-list li a {
+  display: block;
+  /* color: #faf9fa; */
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+  position: relative;
+}
+
+.nav-list li a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px; 
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color:white;
+  transition: width 0.3s ease-out; 
+}
+
+.nav-list li a:hover::before {
+  width: 100%; 
+}
+
+.logo{
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+.logoLink{
+  font-size: 1.2em;
+  
+}
+
+@media screen and (max-width: 970px) {
+  /* .nav-list {
+    display: none;
+  }
+
+  .menu.show {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  .hamburger.open .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.open .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  } */
+
+}
+
+
+
+
+/* ###################################################################################################################
+
+                             ******       Home Component        ******
+
+#0ea9f1   #041e55
+
+################################################################################################################## */
+.homeSection{
+  /* border: 2px solid red; */
+  background-color:#0ea9f1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.homeSection{
+  width: 100%;
+  
+  /* height: 100lvh; */
+  height: 650px;
+  padding-top:60px ;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  /* z-index: 9; */
+}
+
+.home-left-div{
+  margin-top: 90px;
+  z-index: 9;
+
+}
+.home-left-div > h1{
+  font-size: 80px;
+  color: white;
+}
+.home-left-div > p{
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.home-btn{
+  font-size: 25px;
+  margin-top: 40px;
+  padding: 5px 50px;
+  border-radius: 10px;
+  background-color: #041e55;
+  /* color: #232D3F; */
+  font-family: "Dosis", sans-serif;
+  border: 1px solid #041e55;
+}
+.home-btn:hover{
+  cursor: pointer;
+  background-color: #03144c;
+  /* border: none; */
+}
+.home-right-div{
+  z-index: 9;
+}
+
+
+.home-right-div > img{
+  margin: 30px;
+  width: 350px;
+  padding-left:20px ;
+  
+  border-top-right-radius: 100px;
+  border-top-left-radius: 400px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 400px;
+}
+
+.home-btn {
+  border: none;
+  color: #fff;
+  background-image: linear-gradient(30deg, #041e55, #0971c1);
+  border-radius: 20px;
+  background-size: 100% auto;
+  font-family: "Dosis", sans-serif;
+  font-size: 17px;
+  padding: 0.6em 1.5em;
+  z-index: 1;
+ }
+ 
+ .home-btn:hover {
+  background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse512 1.5s infinite;
+ }
+ 
+ @keyframes pulse512 {
+  0% {
+   box-shadow: 0 0 0 0 #05bada66;
+  }
+ 
+  70% {
+   box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+  }
+ 
+  100% {
+   box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+  }
+ }
+ .homeBorder{
+  margin-top: -450px;
+  height: auto;
+  z-index: -1;
+}
+
+
+
+
+
+
+/* ###################################################################################################################
+
+                             ******       About Component        ******
+
+################################################################################################################## */
+#aboutSection{
+  border-top: 30px solid #041e55;
+  margin-top: -10px;
+  background-color: #041e55;
+  /* border: 2px solid red; */
+  height: 750px;
+  width: 100%;
+  display: flex;
+}
+
+.leftAbout{
+  background-color: #041e55;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+.leftAbout >.imageBox{
+  background-color: #0ea9f1;
+  width: 70%;
+  /* height: auto; */
+  display: flex;
+  justify-content: center;
+  background: hsla(221, 91%, 17%, 1);
+
+  background: linear-gradient(90deg, hsla(221, 91%, 17%, 1) 18%, hsla(218, 90%, 19%, 1) 27%, hsla(215, 91%, 21%, 1) 35%, hsla(212, 90%, 24%, 1) 45%, hsla(207, 89%, 29%, 1) 57%, hsla(204, 90%, 35%, 1) 70%, hsla(199, 89%, 50%, 1) 99%);
+
+  background: -moz-linear-gradient(90deg, hsla(221, 91%, 17%, 1) 18%, hsla(218, 90%, 19%, 1) 27%, hsla(215, 91%, 21%, 1) 35%, hsla(212, 90%, 24%, 1) 45%, hsla(207, 89%, 29%, 1) 57%, hsla(204, 90%, 35%, 1) 70%, hsla(199, 89%, 50%, 1) 99%);
+
+  background: -webkit-linear-gradient(90deg, hsla(221, 91%, 17%, 1) 18%, hsla(218, 90%, 19%, 1) 27%, hsla(215, 91%, 21%, 1) 35%, hsla(212, 90%, 24%, 1) 45%, hsla(207, 89%, 29%, 1) 57%, hsla(204, 90%, 35%, 1) 70%, hsla(199, 89%, 50%, 1) 99%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#041E55", endColorstr="#05265E", GradientType=1 );
+  
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  
+}
+
+.leftAbout >.imageBox >img{
+  
+  width: 100%;
+}
+
+ 
+.rightAbout{
+  /* margin-top: 60px; */
+  width: 60%;
+  padding-bottom: 100px;
+  padding-right:20px ;
+}
+.upperRight{
+  /* border: 2px solid rgb(0, 255, 21); */
+  height: 20%;
+}
+.upperHeading{
+  font-size: 3.5em;
+}
+
+
+.lowerRight{
+  /* border: 2px solid rgb(0, 255, 21); */
+  height: 70%;
+}
+
+.aboutSvg{
+  margin-top: -1000px;
+}
+
+
+
+
+/*'$$$$$$$$$$$$$$$$$ About me Header $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+.aboutHeader{
+  background-color: #0ea9f1;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  
+}
+
+.aboutHeader > ul{
+  list-style: none;
+  display: flex;
+  
+}
+.aboutHeader > ul >li{
+  padding: 10px 0px;
+  padding-right: 30px;
+  font-weight: bold;
+}
+.content{
+  padding-left: 10px;
+  background-color: #0ea9f1;
+  border: 1px solid #0ea9f1;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ###################################################################################################################
+
+                             ******       My Services Component        ******
+
+################################################################################################################## */
+.myServices{
+  background-color: #0ea9f1;
+  height: 500px;
+  margin-top: -10px;
+}
+
+.upperService>h1{
+  text-align: center;
+  color: #f8f9fa;
+  margin-bottom: 40px;
+  font-size: 4em;
+}
+
+.lowerService{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* Card Design     $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+.card-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.card .front-content {
+  width: 100%;
+  height: 100%;
+  background-color: #041e55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
+
+.card .front-content p {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 1;
+  background: linear-gradient(-45deg, #f4f6f7 0%, #f3f4f5 100% );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
+
+.card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  /* background: linear-gradient(-45deg, #f89b29 0%, #FFCC70 100% );
+  color: #e8e8e8; */
+  
+  background: linear-gradient(-45deg, #f3f1f0 0%, #f6f2f2 100% );
+  color: #041e55;
+  padding: 20px;
+  line-height: 1.5;
+  border-radius: 5px;
+  pointer-events: none;
+  transform: translateY(-96%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card .content .heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+.content>p{
+  color: #041e55;
+}
+
+.card:hover .content {
+  transform: translateY(0);
+}
+
+.card:hover .front-content {
+  transform: translateY(30%);
+}
+
+.card:hover .front-content p {
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ###################################################################################################################
+
+                             ******       My Work Component        ******
+
+################################################################################################################## */
+.myWork{
+  background-color: white;
+  /* border: 2px solid red; */
+  margin-top: -150px;
+  height: 650px;
+}
+.myWorkHeading>h1{
+  color: #041e55;
+  text-align: center;
+  font-size: 4em;
+}
+.myWorkHeading{
+  height: 20%;
+}
+.myWorkContent{
+  border: 2px solid black;
+  height: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ###################################################################################################################
+
+                             ******       Contact Component        ******
+
+################################################################################################################## */
+.contactSection{
+  background-color: #0ea9f1;
+  margin-top: -250px;
+  display: flex;
+  height: 600px;
+  padding-top:140px ;
+}
+
+.leftContact{
+  /* border: 2px solid red; */
+  width: 40%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+.leftInner{
+  border: 2px solid red;
+  width: auto;
+}
+
+
+
+
+
+
+.rightContact{
+  border: 2px solid red;
+  width: 60%;
+  padding-left:30px ;
+}
+.rightUpper>h1{
+  /* text-align: center; */
+  margin: 10px 0px;
+  font-size: 3em;
+  color: white;
+}
+.rightLower{
+  /* border: 2px solid black; */
+  width: 80%;
+
+}
+
+input,textarea{
+  font-size: 1em;
+  color: #041e55;
+  width: 100%;
+  margin: 5px 0px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* input, */
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc; /* You can adjust the color and thickness of the outline */
+  }
+
+
+.submitBtn{
+  
+  font-family: inherit;
+  font-size: 1.3em;
+  background: linear-gradient(to bottom,#0ea9f1 0%,#041e55 100%);
+  color: #041e55;
+  padding: .5em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.submitBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0, 20, 99, 0.3);
+  cursor: pointer;
+}
+
+.submitBtn:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 5px rgba(0, 20, 99, 0.3);
+}
+
+.submitBtn .submitSpan {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s;
+  font-weight: bold;
+  
+}
+.submitSpan:hover{
+  color: #041e55;
+}
+
+.submitBtn .formBtn {
+  width: 18px;
+  height: 18px;
+  fill: white;
+  transition: all 0.3s;
+}
+
+.submitBtn .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.224);
+  margin-right: 0.5em;
+  transition: all 0.3s;
+}
+
+.submitBtn:hover .svg-wrapper {
+  background-color: #041e55;
+}
+.submitBtn:hover{
+  color: #041e55;
+}
+
+.submitBtn:hover .formBtn {
+  transform: rotate(45deg);
+  /* background-color: white; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ###################################################################################################################
+
+                             ******       footer Component        ******
+
+################################################################################################################## */
+.footer{
+  background-color: #1b1b1b;
+  height: 30px;
+  text-align: center;
+  padding-top:5px ;
+  
+}
